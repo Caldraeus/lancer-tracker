@@ -1,0 +1,199 @@
+
+/* Set the font family and color for the whole page */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+/* Style the title with a crimson border, padding, and a subtle shadow effect */
+h1 {
+    top: 10px;
+    position: relative;
+    margin: 0 auto;
+    width: 50%;
+    border: 5px solid crimson;
+    background-color:crimson;
+    box-shadow: 5px 5px 0px black;
+    padding: 15px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+
+/* Style the paragraph with a crimson box and some margin */
+p {
+    background-color: crimson;
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 5px 5px 0px black;
+    text-align: center  ;
+}
+
+div {
+    background-color: transparent;
+    width: 50%;
+    height: 100%;
+    box-shadow: none;
+    position: absolute;
+    margin: 0 auto;
+    opacity: 1;
+    left:25%;
+}
+
+#login-box {
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    height: 45%;
+    margin-top: 5%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px black;
+    background-color: white;
+}
+
+#loginform{
+    color:crimson; /* Change the color to crimson */
+    width: 80%;
+    left:10%;
+    font-family: 'Roboto', sans-serif; /* Add some font-family */
+}
+
+#back-button{
+    pointer-events: none;
+}
+
+button.back {
+    width: 20%;
+    top:480px;
+    right:-25%;   
+    position: relative; /* Add relative positioning to the button */
+    overflow: hidden; /* Hide overflow to contain absolute positioned elements */
+    background-color: crimson;
+    border: none;
+    color: white;
+    box-shadow: 5px 5px 0px black;
+    padding: 20px; /* Adjust padding */
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    z-index: 1;
+    position: relative; /* Add this line to position the text relative to the button */
+    font-size: 40px;
+    font-family: "Space Mono", monospace;
+}
+
+button.back:hover {
+    background-color: rgb(226, 96, 122);
+    transform: translateX(10%); /* move 20px to the right */
+    box-shadow: -50px 10px 25px rgb(71, 71, 71);
+}
+/* Add the ::before and ::after pseudo-elements to create the white line */
+button.back::before,
+button.back::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 0%, rgb(255, 255, 255) 25%, transparent 75%);
+    transform: translateX(-150px);
+    opacity: 0;
+}
+
+button.back:hover::before,
+button.back:hover::after {
+    animation: glint .3s ease-in-out;
+    animation-fill-mode: forwards; /* Add this line */
+    opacity: 1;
+}
+
+/* Create the animation for the pseudo-elements */
+@keyframes glint {
+    0% {
+        transform: translateX(-150px);
+    }
+    50% {
+        transform: translateX(150px);
+    }
+    100% {
+        transform: translateX(150px);
+        opacity: 0;
+    }
+}
+
+label{
+    background-color: crimson;
+    box-shadow: 5px 5px 0px black;
+    font-size: large;
+    text-align:center;
+    border-radius: 4px; /* Add some border-radius */
+    padding: 5px; /* Add some padding */
+}
+
+/* Set the background color to white */
+body {
+    background-color: white;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Create a diagonal grid pattern for the background */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, grey 10%, transparent 11%);
+    background-size: 40px 40px;
+    opacity: 0.5;
+    pointer-events: none;
+    animation: fall-dots 300s linear infinite;
+    z-index: -1; /* Increase the z-index value */
+}
+
+
+@keyframes fall-dots {
+    from {background-position: 0 0;}
+    to {background-position: 70% 100%;}
+}
+
+/* Style form elements */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: -10px;
+    color: black;
+}
+
+button.submit {
+    padding: 10px 20px;
+    background-color: crimson;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Add some transition */
+    width: 100%; /* Add some width */
+    box-shadow: 5px 5px 0px black;
+    margin-top: 10px;
+}
+
+button.submit:hover {
+    background-color: darkred;
+    transform: scale(1.1); /* Add some scale effect on hover */
+}

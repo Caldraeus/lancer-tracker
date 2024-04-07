@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <title>Lancer Live Battle Roster</title>
+</head>
+<body>
+    <h1>Lancer Live Battle Roster</h1>
+    <p>This is a web app that lets you create and manage a live battle roster for Lancer, a tabletop role-playing game that features mech combat and character customization. The intended use is for you to have this on a second monitor, displayed to your players.</p>
+    <div class="button-box">
+        <button onclick="goToCharacter()" class="menu-button">
+            <img src="../assets/icons/mech-icon.png" alt="Character Builder" draggable="false">
+            <span data-value="CHARACTERS">CHARACTERS</span> <!-- Wrap the text in a span element -->
+        </button>
+        <button onclick="goToEncounter()" class="menu-button">
+            <img src="../assets/icons/battle.png" alt="Encounter Builder" draggable="false">
+            <span data-value="ENCOUNTERS">ENCOUNTERS</span> <!-- Wrap the text in a span element -->
+        </button>
+        <button onclick="goToLoginOrProfile()" class="menu-button" id="profile-button">
+            <img src="../assets/icons/login_clear.png" alt="LoginOrProfile" draggable="false">
+            <span data-value="LOGIN">LOGIN</span> <!-- Wrap the text in a span element -->
+        </button>
+        <button onclick="toggleDarkMode()" class="menu-button">
+            <img src="../assets/icons/help.png" alt="Help Screen" draggable="false">
+            <span data-value="OPTIONS">OPTIONS</span> <!-- Wrap the text in a span element -->
+        </button>
+        <script defer src="../js/index-functionality.js"></script>
+    </div>
+    <div class="slideshow-container" id="slideshow-container">
+        <img src="../assets/artwork/SSC White Witch.png" alt="Mech" id="slideshow-img1"></img> <!-- Change the id of the first image -->
+        <img src="../assets/artwork/Harrison Genghis.png" alt="Mech" id="slideshow-img2"></img> <!-- Change the id of the second image -->
+    </div>   
+    <script src="../js/index-images.js"></script>
+</body>
+</html>

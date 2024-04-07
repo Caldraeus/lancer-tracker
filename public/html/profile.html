@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/profile.css">
+    <title>Profile</title>
+</head>
+<body>
+    <div class="profile-info">
+        <h1>PROFILE // LOGGED IN</h1>
+        <div class="email-section">
+            <h2>EMAIL</h2>
+            <p id="current-email">example@example.com</p>
+            <!-- Added Change Email button to trigger the modal -->
+            <button type="button" id="modal-button" onclick="showModal('change-email-modal')">Change Email</button>
+            <!-- Change Password button to trigger the modal -->
+            <button type="button" id="modal-button" onclick="showModal('change-password-modal')">Change Password</button>
+        </div>
+        <div class="character-count">
+            <h2 class="count">CHARACTER COUNT</h2>
+            <p class="character-number">0</p>
+        </div>
+        <button id="logout-button">// LOG OUT</button>
+        <button type="button" class="back-button" onclick="returnToIndex()"><< BACK</button>
+    </div>
+
+    <!-- Modal for changing email -->
+    <div id="change-email-modal" class="modal">
+        <div class="modal-content">
+            <button type="button" class="close" onclick="hideModal('change-email-modal')">×</button>
+            <h2 id="modal-title">Change Email</h2>
+            <form id="change-email-form">
+                <label for="modal-new-email">New Email:</label>
+                <input type="email" id="modal-new-email" name="modal-new-email" required>
+                <label for="modal-current-password">Current Password:</label> <!-- Added label for current password -->
+                <input type="password" id="modal-current-password-email" name="modal-current-password" required> <!-- Added input field for current password -->
+                <button type="button" onclick="handleChangeEmailFormSubmit()">Change Email</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Modal for changing password -->
+    <div id="change-password-modal" class="modal">
+        <div class="modal-content">
+            <button type="button" class="close" onclick="hideModal('change-password-modal')">×</button>
+            <h2 id="modal-title">Change Password</h2>
+            <form id="change-password-modal-form">
+                <label for="modal-current-password">Current Password:</label>
+                <input type="password" id="modal-current-password" name="modal-current-password" required>
+                <label for="modal-new-password">New Password:</label>
+                <input type="password" id="modal-new-password" name="modal-new-password" required>
+                <label for="modal-confirm-password">Confirm New Password:</label>
+                <input type="password" id="modal-confirm-password" name="modal-confirm-password" required>
+                <button type="button" onclick="handleChangePasswordFormSubmit()">Change Password</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/profile.js"></script>
+</body>
+</html>
